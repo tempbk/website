@@ -1,0 +1,1140 @@
+@import'tailwindcss';
+
+:root {
+  --background: #181616;
+  --foreground: #171717;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --background: #0a0a0a;
+    --foreground: #ededed;
+  }
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Navbar, Hero, InfoSection, Footer, Homepage Sections (unchanged) */
+.navbar {
+  background-color: var(--background);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.navbar-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem;
+}
+
+.navbar-content {
+  display: flex;
+  align-items: center;
+  height: 4rem;
+  position: relative;
+}
+
+.logo-container {
+  display: flex;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  flex-shrink: 0;
+  justify-content: center;
+}
+
+.logo {
+  display: inline-block;
+  line-height: 0;
+}
+.logo-desktop {
+display: none;
+}
+
+.logo-mobile {
+  display: block;
+}
+
+.mobile-menu-button {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+}
+
+.menu-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+  color: var(--foreground);
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.menu-toggle:hover {
+  opacity: 0.8;
+}
+
+.menu-toggle:focus {
+  outline: none;
+}
+
+.desktop-menu {
+  display: none;
+}
+
+.nav-link {
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: var(--foreground);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.nav-link:hover {
+  opacity: 0.8;
+}
+
+.mobile-menu {
+  background-color: var(--background);
+}
+
+.mobile-menu-content {
+  padding: 0.5rem 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.mobile-nav-link {
+  display: block;
+  padding: 0.5rem 0.75rem;
+  border-radius: 0.375rem;
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--foreground);
+  text-decoration: none;
+  transition: opacity 0.2s ease;
+}
+
+.mobile-nav-link:hover {
+  opacity: 0.8;
+}
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 50vh;
+  overflow: hidden;
+}
+
+.hero-slider {
+  width: 100%;
+  height: 100%;
+}
+
+.hero-slide {
+  width: 100%;
+  height: 50vh;
+  object-fit: cover;
+}
+
+.hero-content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  padding: 2rem;
+  color: var(--foreground);
+  z-index: 1;
+}
+
+.info-section {
+  background-color: #1E90FF;
+  padding: 4rem 1.5rem;
+}
+
+.info-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.info-content {
+  flex: 1;
+}
+
+.info-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin-bottom: 1rem;
+}
+
+.info-description {
+  font-size: 1rem;
+  color: var(--foreground);
+  line-height: 1.5;
+  min-height: 4.5rem;
+}
+
+.info-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.info-img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.featured-services {
+  background-color: #1C2526; /* Dark navy blue */
+  padding: 4rem 1.5rem;
+}
+
+.services-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.services-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--foreground);
+  margin-bottom: 1rem;
+}
+
+.services-description {
+  font-size: 1.25rem;
+  color: var(--foreground);
+  max-width: 800px;
+  margin: 0 auto 2rem;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.service-card {
+  background-color: #2A3B3C; /* Lighter contrast */
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.service-icon {
+  color: #4A919E; /* Accent color */
+  margin-bottom: 1rem;
+}
+
+.service-card-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin-bottom: 0.5rem;
+}
+
+.service-card-img {
+  width: 100%;
+  height: auto;
+  border-radius: 0.25rem;
+  margin-bottom: 1rem;
+}
+
+.service-card-description {
+  font-size: 0.875rem;
+  color: var(--foreground);
+  margin-bottom: 1rem;
+}
+
+.service-card-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #4A919E;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.service-card-button:hover {
+  background-color: #3A7B88;
+}
+
+
+.footer {
+  background-color: #121212;
+  color: var(--foreground);
+  padding: 3rem 1.5rem 1rem;
+}
+
+.footer-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.footer-section {
+  flex: 1;
+}
+
+.footer-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin-bottom: 1rem;
+}
+
+.footer-links {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.footer-link {
+  color: var(--foreground);
+  text-decoration: none;
+  font-size: 0.875rem;
+  transition: opacity 0.2s ease;
+}
+
+.footer-link:hover {
+  opacity: 0.8;
+}
+
+.footer-contact {
+  font-size: 0.875rem;
+  color: var(--foreground);
+  margin-bottom: 0.5rem;
+}
+
+.footer-social {
+  display: flex;
+  gap: 1rem;
+}
+
+.footer-social-link {
+  color: var(--foreground);
+  transition: opacity 0.2s ease;
+}
+
+.footer-social-link:hover {
+  opacity: 0.8;
+}
+
+.footer-bottom {
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding-top: 1rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.footer-copyright {
+  font-size: 0.75rem;
+  color: var(--foreground);
+}
+
+.about-page {
+  background-color: #2539ed; /* Dark navy blue */
+  color: var(--foreground);
+}
+
+.about-hero {
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.about-hero-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.about-hero-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--foreground);
+  margin-bottom: 1rem;
+}
+
+.about-hero-description {
+  font-size: 1.25rem;
+  color: var(--foreground);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-story {
+  padding: 4rem 1.5rem;
+}
+
+.about-story-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.about-story-content {
+  flex: 1;
+}
+
+.about-story-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin-bottom: 1rem;
+}
+
+.about-story-description {
+  font-size: 1rem;
+  color: var(--foreground);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.about-story-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-story-img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.about-expertise {
+  padding: 4rem 1.5rem;
+  background-color: #262942; /* Dark navy blue */
+  /* Slightly lighter for contrast */
+}
+
+.about-expertise-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.about-expertise-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--foreground);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.about-expertise-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.expertise-card {
+  background-color: #1C2526;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.expertise-icon {
+  color: #4A919E; /* Accent color */
+  margin-bottom: 1rem;
+}
+
+.expertise-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin-bottom: 0.5rem;
+}
+
+.expertise-card-description {
+  font-size: 0.875rem;
+  color: var(--foreground);
+}
+
+.about-cta {
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.about-cta-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.about-cta-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin-bottom: 1rem;
+}
+
+.about-cta-description {
+  font-size: 1rem;
+  color: var(--foreground);
+  margin-bottom: 1.5rem;
+}
+
+.about-cta-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #4A919E;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.about-cta-button:hover {
+  background-color: #1c33ff;
+}
+
+
+
+.services-page {
+  background-color: #1C2526; /* Dark navy blue */
+  color: var(--foreground);
+}
+
+.services-hero {
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.services-hero-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.services-hero-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--foreground);
+  margin-bottom: 1rem;
+}
+
+.services-hero-description {
+  font-size: 1.25rem;
+  color: var(--foreground);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.service-section {
+  padding: 4rem 1.5rem;
+  background-color: #2A3B3C; /* Lighter contrast */
+}
+
+.service-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.service-content {
+  flex: 1;
+}
+
+.service-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin-bottom: 1rem;
+}
+
+.service-description {
+  font-size: 1rem;
+  color: var(--foreground);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.service-benefits {
+  list-style: none;
+  padding: 0;
+  font-size: 1rem;
+  color: var(--foreground);
+}
+
+.service-benefits li {
+  margin-bottom: 0.5rem;
+}
+
+.service-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.service-img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  border-radius: 0.5rem;
+}
+
+.service-reverse .service-container {
+  flex-direction: column-reverse;
+}
+
+.services-cta {
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.services-cta-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.services-cta-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin-bottom: 1rem;
+}
+
+.services-cta-description {
+  font-size: 1rem;
+  color: var(--foreground);
+  margin-bottom: 1.5rem;
+}
+
+.services-cta-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #4A919E; /* Accent color */
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.services-cta-button:hover {
+  background-color: #3A7B88;
+}
+
+
+.hiring-page {
+  background-color: #1C2526; /* Dark navy blue */
+  color: var(--foreground);
+}
+
+.hiring-hero {
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.hiring-hero-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.hiring-hero-title {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: var(--foreground);
+  margin-bottom: 1rem;
+}
+
+.hiring-hero-description {
+  font-size: 1.25rem;
+  color: var(--foreground);
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hiring-why {
+  padding: 4rem 1.5rem;
+}
+
+.hiring-why-container {
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.hiring-why-content {
+  flex: 1;
+}
+
+.hiring-why-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin-bottom: 1rem;
+}
+
+.hiring-why-description {
+  font-size: 1rem;
+  color: var(--foreground);
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.hiring-why-list {
+  list-style: none;
+  padding: 0;
+  font-size: 1rem;
+  color: var(--foreground);
+}
+
+.hiring-why-list li {
+  margin-bottom: 0.5rem;
+}
+
+.hiring-why-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hiring-why-img {
+  width: 100%;
+  max-width: 600px;
+  height: auto;
+  object-fit: cover;
+  border-radius: 0.5rem;
+}
+
+.hiring-roles {
+  padding: 4rem 1.5rem;
+  background-color: #2A3B3C; /* Lighter contrast */
+}
+
+.hiring-roles-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.hiring-roles-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--foreground);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hiring-roles-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 2rem;
+}
+
+.role-card {
+  background-color: #1C2526;
+  padding: 1.5rem;
+  border-radius: 0.5rem;
+  text-align: center;
+}
+
+.role-card-title {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--foreground);
+  margin-bottom: 0.5rem;
+}
+
+.role-card-description {
+  font-size: 0.875rem;
+  color: var(--foreground);
+  margin-bottom: 1rem;
+}
+
+.role-card-button {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  background-color: #4A919E;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.role-card-button:hover {
+  background-color: #3A7B88;
+}
+
+.hiring-cta {
+  padding: 4rem 1.5rem;
+  text-align: center;
+}
+
+.hiring-cta-container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+.hiring-cta-title {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--foreground);
+  margin-bottom: 1rem;
+}
+
+.hiring-cta-description {
+  font-size: 1rem;
+  color: var(--foreground);
+  margin-bottom: 1.5rem;
+}
+
+.hiring-cta-button {
+  display: inline-block;
+  padding: 0.75rem 1.5rem;
+  background-color: #4A919E;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 0.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+  transition: background-color 0.2s ease;
+}
+
+.hiring-cta-button:hover {
+  background-color: #3A7B88;
+}
+
+@media (max-width: 320px) {
+  .navbar-container {
+    padding: 1rem 0.5rem;
+  }
+
+  .logo-mobile {
+    display: block;
+  }
+ 
+  .hero {
+    height: 40vh;
+  }
+
+  .hero-slide {
+    height: 40vh;
+  }
+
+  .hero-content {
+    padding: 1rem;
+  }
+
+   .info-section {
+    padding: 2rem 1rem;
+  }
+
+  .info-title {
+    font-size: 1.5rem;
+  }
+
+  .info-description {
+    font-size: 0.875rem;
+  }
+
+
+.featured-services {
+    padding: 2rem 1rem;
+  }
+
+  .services-title {
+    font-size: 1.75rem;
+  }
+
+  .services-description {
+    font-size: 1rem;
+  }
+
+  .service-card-title {
+    font-size: 1.25rem;
+  }
+
+  .service-card-description {
+    font-size: 0.75rem;
+  }
+
+  .service-card-button {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+   .footer {
+    padding: 2rem 1rem 1rem;
+  }
+
+  .footer-title {
+    font-size: 1rem;
+  }
+
+  .footer-link,
+  .footer-contact {
+    font-size: 0.75rem;
+  }
+  .about-hero-description {
+    font-size: 1rem;
+  }
+
+  .about-story-title,
+  .about-expertise-title,
+  .about-cta-title {
+    font-size: 1.5rem;
+  }
+
+  .about-story-description,
+  .about-cta-description {
+    font-size: 0.875rem;
+  }
+
+  .expertise-card-title {
+    font-size: 1rem;
+  }
+
+  .expertise-card-description {
+    font-size: 0.75rem;
+  }
+
+  .about-cta-button {
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+  }
+
+.services-hero,
+  .service-section,
+  .services-cta {
+    padding: 2rem 1rem;
+  }
+
+  .services-hero-title {
+    font-size: 1.75rem;
+  }
+
+  .services-hero-description {
+    font-size: 1rem;
+  }
+
+  .service-title,
+  .services-cta-title {
+    font-size: 1.5rem;
+  }
+
+  .service-description,
+  .services-cta-description {
+    font-size: 0.875rem;
+  }
+
+  .service-benefits {
+    font-size: 0.875rem;
+  }
+
+  .services-cta-button {
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+  }
+
+   .hiring-hero,
+  .hiring-why,
+  .hiring-roles,
+  .hiring-cta {
+    padding: 2rem 1rem;
+  }
+
+  .hiring-hero-title {
+    font-size: 1.75rem;
+  }
+
+  .hiring-hero-description {
+    font-size: 1rem;
+  }
+
+  .hiring-why-title,
+  .hiring-roles-title,
+  .hiring-cta-title {
+    font-size: 1.5rem;
+  }
+
+  .hiring-why-description,
+  .hiring-cta-description {
+    font-size: 0.875rem;
+  }
+
+  .role-card-title {
+    font-size: 1rem;
+  }
+
+  .role-card-description {
+    font-size: 0.75rem;
+  }
+
+  .role-card-button {
+    font-size: 0.75rem;
+    padding: 0.5rem 0.75rem;
+  }
+
+  .hiring-cta-button {
+    font-size: 0.875rem;
+    padding: 0.5rem 1rem;
+  }
+
+}
+
+@media (min-width: 768px) {
+  .logo-container {
+    position: static;
+    left: 0;
+    transform: none;
+  }
+  .logo-desktop {
+  display: block;
+  }
+  .logo-mobile {
+    display: none;
+  }
+
+  .mobile-menu-button {
+    display: none;
+  }
+
+  .desktop-menu {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    margin-left: auto;
+  }
+
+  .mobile-menu {
+    display: none;
+  }
+
+  .info-container {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .info-content {
+    max-width: 50%;
+  }
+
+  .info-image {
+    max-width: 50%;
+    justify-content: flex-end;
+  }
+
+  .services-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  .services-title {
+    font-size: 3rem;
+  }
+
+  .services-description {
+    font-size: 1.5rem;
+  }
+
+  .footer-container {
+    flex-direction: row;
+    gap: 4rem;
+  }
+
+  .about-story-container {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .about-story-content,
+  .about-story-image {
+    max-width: 50%;
+  }
+
+  .about-expertise-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+
+.service-container {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .service-content,
+  .service-image {
+    max-width: 50%;
+  }
+
+  .service-reverse .service-container {
+    flex-direction: row-reverse;
+  }
+
+   .hiring-why-container {
+    flex-direction: row;
+    align-items: center;
+  }
+
+  .hiring-why-content,
+  .hiring-why-image {
+    max-width: 50%;
+  }
+
+  .hiring-roles-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+
+
+
+
+
+
+
+
+/* Hiring Page Styles */
+
+
+
+
+
+
+/* Featured Services Styles */
+
+
+
+

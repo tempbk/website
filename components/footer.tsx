@@ -34,7 +34,7 @@ export default function Footer() {
         <div className="footer-section">
           <h3 className="footer-title">Contact</h3>
           <p className="footer-contact">
-            Email: <a href="mailto:info@yoursite.com" className="footer-link">cjbyron99@gmail.com</a>
+            Email: <a href="mailto:cjbyron99@gmail.com" className="footer-link">cjbyron99@gmail.com</a>
           </p>
           <p className="footer-contact">Phone: 701-864-0988</p>
           
@@ -65,7 +65,7 @@ export default function Footer() {
       </div>
       <div className="footer-bottom">
         <p className="footer-copyright">
-          &copy; {new Date().getFullYear()} Your Site. All rights reserved.
+          &copy; {new Date().getFullYear()} Byron Technology. All rights reserved.
         </p>
       </div>
     </footer>
